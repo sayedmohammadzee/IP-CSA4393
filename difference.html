@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurrency Differences - Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('./oin.jpg'); /* Replace with your image path */
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            color:  rgb(50, 22, 175);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Concurrency Differences</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Currency Calculator</a>
+            <a href="difference.html">Concurrency Differences</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="help.html">Help</a>
+            <a href="feedback1.html">Feedback</a>
+            <a href="query.html">Query</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Currency Differences</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Currency Pair</th>
+                    <th>Exchange Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>USD to EUR</td>
+                    <td>0.85</td>
+                </tr>
+                <tr>
+                    <td>USD to GBP</td>
+                    <td>0.75</td>
+                </tr>
+                <tr>
+                    <td>USD to JPY</td>
+                    <td>110.00</td>
+                </tr>
+                <tr>
+                    <td>USD to AUD</td>
+                    <td>1.35</td>
+                </tr>
+                <tr>
+                    <td>USD to CAD</td>
+                    <td>1.30</td>
+                </tr>
+                <tr>
+                    <td>USD to CHF</td>
+                    <td>0.92</td>
+                </tr>
+                <tr>
+                    <td>USD to CNY</td>
+                    <td>6.50</td>
+                </tr>
+                <tr>
+                    <td>USD to INR</td>
+                    <td>82.00</td>
+                </tr>
+                <tr>
+                    <td>USD to MXN</td>
+                    <td>18.00</td>
+                </tr>
+                <tr>
+                    <td>USD to NZD</td>
+                    <td>1.40</td>
+                </tr>
+                <tr>
+                    <td>USD to SEK</td>
+                    <td>9.00</td>
+                </tr>
+                <tr>
+                    <td>USD to SGD</td>
+                    <td>1.36</td>
+                </tr>
+                <tr>
+                    <td>USD to HKD</td>
+                    <td>7.85</td>
+                </tr>
+                <tr>
+                    <td>USD to ZAR</td>
+                    <td>18.50</td>
+                </tr>
+                <tr>
+                    <td>USD to TRY</td>
+                    <td>26.00</td>
+                </tr>
+                <tr>
+                    <td>USD to BRL</td>
+                    <td>5.10</td>
+                </tr>
+                <tr>
+                    <td>USD to RUB</td>
+                    <td>80.00</td>
+                </tr>
+                <tr>
+                    <td>USD to ARS</td>
+                    <td>270.00</td>
+                </tr>
+                <tr>
+                    <td>USD to CLP</td>
+                    <td>820.00</td>
+                </tr>
+                <tr>
+                    <td>USD to COP</td>
+                    <td>4,200.00</td>
+                </tr>
+                <tr>
+                    <td>USD to PEN</td>
+                    <td>3.80</td>
+                </tr>
+                <tr>
+                    <td>USD to MYR</td>
+                    <td>4.50</td>
+                </tr>
+                <tr>
+                    <td>USD to VND</td>
+                    <td>23,500.00</td>
+                </tr>
+                <tr>
+                    <td>USD to TWD</td>
+                    <td>30.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Currency Converter</p>
+    </footer>
+</body>
+</html>

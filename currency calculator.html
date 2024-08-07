@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Calculator - Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('./oin.jpg'); /* Replace with your image path */
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            color: white;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form label, form input, form select, form button {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        form input, form select {
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Currency Calculator</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Currency Calculator</a>
+            <a href="difference.html">Concurrency Differences</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="help.html">Help</a>
+            <a href="feedback1.html">Feedback</a>
+            <a href="query.html">Query</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Currency Conversion Calculator</h2>
+        <form id="calculator-form">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            <label for="from-currency">From Currency:</label>
+            <select id="from-currency" name="from-currency" required>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="INR">INR</option>
+                <option value="MXN">MXN</option>
+                <option value="NZD">NZD</option>
+                <option value="SEK">SEK</option>
+                <option value="SGD">SGD</option>
+                <option value="HKD">HKD</option>
+                <option value="ZAR">ZAR</option>
+                <option value="TRY">TRY</option>
+                <option value="BRL">BRL</option>
+                <option value="RUB">RUB</option>
+                <option value="ARS">ARS</option>
+                <option value="CLP">CLP</option>
+                <option value="COP">COP</option>
+                <option value="PEN">PEN</option>
+            </select>
+            <label for="to-currency">To Currency:</label>
+            <select id="to-currency" name="to-currency" required>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="INR">INR</option>
+                <option value="MXN">MXN</option>
+                <option value="NZD">NZD</option>
+                <option value="SEK">SEK</option>
+                <option value="SGD">SGD</option>
+                <option value="HKD">HKD</option>
+                <option value="ZAR">ZAR</option>
+                <option value="TRY">TRY</option>
+                <option value="BRL">BRL</option>
+                <option value="RUB">RUB</option>
+                <option value="ARS">ARS</option>
+                <option value="CLP">CLP</option>
+                <option value="COP">COP</option>
+                <option value="PEN">PEN</option>
+            </select>
+            <button type="submit">Convert</button>
+        </form>
+        <div class="result" id="result"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Currency Converter</p>
+    </footer>
+    <script>
+        document.getElementById('calculator-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const amount = parseFloat(document.getElementById('amount').value);
+            const fromCurrency = document.getElementById('from-currency').value;
+            const toCurrency = document.getElementById('to-currency').value;
+            
+            // Example conversion rates (you should replace these with real rates from an API)
+            const rates = {
+                "USD": 1,
+                "EUR": 0.85,
+                "GBP": 0.75,
+                "JPY": 110.00,
+                "AUD": 1.35,
+                "CAD": 1.30,
+                "CHF": 0.92,
+                "CNY": 6.50,
+                "INR": 82.00,
+                "MXN": 18.00,
+                "NZD": 1.40,
+                "SEK": 9.00,
+                "SGD": 1.36,
+                "HKD": 7.85,
+                "ZAR": 18.50,
+                "TRY": 26.00,
+                "BRL": 5.10,
+                "RUB": 80.00,
+                "ARS": 270.00,
+                "CLP": 820.00,
+                "COP": 4200.00,
+                "PEN": 3.80
+            };
+            
+            if (fromCurrency in rates && toCurrency in rates) {
+                const fromRate = rates[fromCurrency];
+                const toRate = rates[toCurrency];
+                const result = (amount / fromRate) * toRate;
+                document.getElementById('result').innerText = `${amount} ${fromCurrency} = ${result.toFixed(2)} ${toCurrency}`;
+            } else {
+                document.getElementById('result').innerText = 'Invalid currency selected.';
+            }
+        });
+    </script>
+</body>
+</html>
